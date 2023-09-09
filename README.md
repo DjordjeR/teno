@@ -1,2 +1,2 @@
-# teno
+# teNo
 Simple note taking application. 
