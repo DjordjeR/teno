@@ -1,29 +1,36 @@
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+
+
+
+import { useState } from "react";
 
 export default function Home() {
+  const [counter, setCounter] = useState(0);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-
-        <div>
-          <Button>Click me</Button>
-        </div>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Card Title</CardTitle>
-            <CardDescription>Card Description</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p>Card Content</p>
-          </CardContent>
-          <CardFooter>
-            <p>Card Footer</p>
-          </CardFooter>
-        </Card>
-
-      </div>
+    <main className="container flex min-h-screen flex-col items-center justify-between p-24">
+      <Card>
+        <CardHeader>
+          <CardTitle>This is my awesome button counter</CardTitle>
+          <CardDescription>Card Description</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>{counter}</p>
+        </CardContent>
+        <CardFooter>
+          <Button onClick={() => setCounter(counter + 1)} >Click me</Button>
+        </CardFooter>
+      </Card>
     </main>
-  )
+  );
 }
